@@ -23,8 +23,8 @@ describe ("NumWord") do
     expect(num1.create_word).to(eq(["twenty-one"]))
   end
   it("create_word method takes a number with a length of three and returns it as a word") do
-    num1 = NumWord.new(300)
-    expect(num1.create_word).to(eq(["three hundred"]))
+    num1 = NumWord.new(333)
+    expect(num1.create_word).to(eq(["three hundred thirty-three"]))
   end
 
 
