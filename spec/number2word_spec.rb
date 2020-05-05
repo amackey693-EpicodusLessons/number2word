@@ -14,12 +14,18 @@ describe ("NumWord") do
     num1 = NumWord.new(50)
     expect(num1.doubles.fetch("50")).to(eq("fifty"))
   end
-  it("create_word method takes a number in the thousands and creates it to a word") do
-    num1 = NumWord.new(1000)
-    expect(num1.create_word).to(eq(["one thousand"]))
+  it("create_word method takes a number in the singles and returns it as a word") do
+    num1 = NumWord.new(3)
+    expect(num1.create_word).to(eq(["three"]))
   end
-  it("create_word method takes a number in the hundreds and creates it to a word") do
-    num1 = NumWord.new(1100)
-    expect(num1.create_word).to(eq(["one thousand one hundred"]))
-  end
+
+
+  # it("create_word method takes a number in the thousands and creates it to a word") do
+  #   num1 = NumWord.new(1000)
+  #   expect(num1.create_word).to(eq(["one thousand"]))
+  # end
+  # it("create_word method takes a number in the hundreds and creates it to a word") do
+  #   num1 = NumWord.new(1100)
+  #   expect(num1.create_word).to(eq(["one thousand one hundred"]))
+  # end
 end

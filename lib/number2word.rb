@@ -8,12 +8,18 @@ class NumWord
   def create_word
     word_num = @num.split('')
     final_word = []
-    x = word_num[0]
-    y = word_num[1]
-
-    if word_num.length == 4 
-      final_word.push((singles.fetch(x) + " thousand ") + (singles.fetch(y) + " hundred"))
+    w = word_num[0]
+    x = word_num[1]
+    y = word_num[2]
+    z = word_num[3]
+    
+    if word_num.length == 1
+      final_word.push(singles.fetch(w))
     end
+
+    # if word_num.length == 4 
+    #   final_word.push((singles.fetch(x) + " thousand ") + (singles.fetch(y) + " hundred"))
+    # end
     final_word 
   end
 
@@ -30,3 +36,7 @@ class NumWord
   end
   
 end
+# if word_num.length == 4 && y == "0"
+#   final_word.push((singles.fetch(x) + " thousand ") 
+# elsif word_num.length == 4 
+#   final_word.push((singles.fetch(x) + " thousand ") + (singles.fetch(y) + " hundred"))
