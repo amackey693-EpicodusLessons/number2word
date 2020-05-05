@@ -13,9 +13,10 @@ class NumWord
     y = word_num[2]
     z = word_num[3]
     
-    if word_num.length == 1
+    if word_num.length == 1 # 1-9
       final_word.push(singles.fetch(w))
-    elsif word_num.length == 2
+      
+    elsif word_num.length == 2 # 10 - 99 
       word_num = word_num[0] + word_num[1]
       if doubles.include?(word_num) 
         final_word.push(doubles.fetch(word_num))
@@ -32,6 +33,18 @@ class NumWord
       else 
         final_word.push(singles.fetch(w) + " hundred")
       end
+
+    elsif word_num.length == 4 #numbers 1000 +
+      word_num = word_num[2] + word_num[3]
+      if doubles.include?(word_num) # for numbers that include "teens"
+        final_word.push( (singles.fetch(w)) + " thousand " + (singles.fetch(x)) + " hundred " + (doubles.fetch(word_num)) )
+      elsif  #for numbers that are 20 +
+        final_word.push( (singles.fetch(w)) + " thousand " + (singles.fetch(x)) + " hundred" + " " + (doubles.fetch(y + "0")) + "-" + (singles.fetch(z)) )
+      elsif 
+        final_word.push( (singles.fetch(w)) + " thousand " + (singles.fetch(x) + " hundred"))
+      else
+        final_word.push(singles.fetch(w) + " thousand")
+      end 
     end
     final_word 
   end

@@ -26,14 +26,8 @@ describe ("NumWord") do
     num1 = NumWord.new(333)
     expect(num1.create_word).to(eq(["three hundred thirty-three"]))
   end
-
-
-  # it("create_word method takes a number in the thousands and creates it to a word") do
-  #   num1 = NumWord.new(1000)
-  #   expect(num1.create_word).to(eq(["one thousand"]))
-  # end
-  # it("create_word method takes a number in the hundreds and creates it to a word") do
-  #   num1 = NumWord.new(1100)
-  #   expect(num1.create_word).to(eq(["one thousand one hundred"]))
-  # end
+  it("create_word method takes a number with a length of four and returns it as a word") do
+    num1 = NumWord.new(3313)
+    expect(num1.create_word).to(eq(["three thousand three hundred thirteen"]))
+  end
 end
