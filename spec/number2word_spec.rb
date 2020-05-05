@@ -8,7 +8,7 @@ describe ("NumWord") do
   end
   it("returns the word for a number given 11-19") do
     num1 = NumWord.new(12)
-    expect(num1.teens.fetch("12")).to(eq("twelve"))
+    expect(num1.doubles.fetch("12")).to(eq("twelve"))
   end
   it("returns the word for a number given 10-90") do
     num1 = NumWord.new(50)
@@ -17,6 +17,10 @@ describe ("NumWord") do
   it("create_word method takes a number in the singles and returns it as a word") do
     num1 = NumWord.new(3)
     expect(num1.create_word).to(eq(["three"]))
+  end
+  it("create_word method takes a number with a length of two and returns it as a word") do
+    num1 = NumWord.new(21)
+    expect(num1.create_word).to(eq(["twenty-one"]))
   end
 
 
