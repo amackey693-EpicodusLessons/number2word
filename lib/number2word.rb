@@ -22,6 +22,8 @@ class NumWord
       else 
         final_word.push( (doubles.fetch(w + "0")) + "-" + (singles.fetch(x)) )
       end
+    elsif word_num.length == 3
+      final_word.push(singles.fetch(w) + " hundred")
     end
 
     # if word_num.length == 4 
